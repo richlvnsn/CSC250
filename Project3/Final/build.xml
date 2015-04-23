@@ -1,0 +1,40 @@
+<!--
+/**
+ *Author: Hunter Dubel, Richard Levenson
+ *Due date: 11/19/14
+ *Assignment: Project 3
+ *Instructor: Dr. DePasquale
+ *
+ */
+-->
+<project name = "build" default = "run">
+	<target name = "compile" depends = "clean">
+		<javac srcdir = "." includes = "**/*.java"/>
+	</target>
+
+	<target name = "clean">
+		<delete dir = "META-INF">
+			<fileset dir = "." includes = "**/*.class,output.txt"/>
+		</delete>
+	</target>
+
+	<target name = "jar">
+		<jar destfile = "Jared.jar"
+			 basedir = "."
+			 excludes = "**/*.class,*.jar,*.pdf,*.txt"
+		 />
+	</target>
+
+	<target name = "author">
+		<echo message="Hunter Dubel and Richard Levenson"/>
+	</target>
+
+	<target name = "run" depends = "author,compile">
+		<java classname = "Driver">
+			<classpath>
+				<pathelement location = "."/>
+			</classpath>
+		</java>
+	</target>
+
+</project>
