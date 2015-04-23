@@ -1,0 +1,44 @@
+<!--
+/**
+ *Author: Dan Sarnelli, Richard Levenson
+ *Due date: 12/5/14
+ *Assignment: Project 4
+ *Instructor: Dr. DePasquale
+ *
+ */
+-->
+<project name = "build" default = "run">
+	<target name = "compile" depends = "clean">
+		<javac srcdir = "." includes = "**/*.java"/>
+	</target>
+
+	<target name = "clean">
+		<delete dir = "META-INF">
+			<fileset dir = "." includes = "**/*.class,output.txt,**/errors.txt,access_log"/>
+		</delete>
+	</target>
+
+	<target name = "jar">
+		<jar destfile = "Project4Group3.jar"
+			 basedir = "."
+			 excludes = "**/*.class,*.jar,*.pdf,*.txt,access_log"
+		 />
+	</target>
+
+	<target name = "author">
+		<echo message="Dan Sarnelli and Richard Levenson"/>
+	</target>
+
+	<target name = "run" depends = "author,compile,download">
+		<java classname = "edu.tcnj.csc250.Driver">
+			<classpath>
+				<pathelement location = "."/>
+			</classpath>
+		</java>
+	</target>
+	<target name = "download">
+		<get src="http://s3.amazonaws.com/depasquale/datasets/access_log" dest="access_log">
+		</get>
+	</target>
+
+</project>
