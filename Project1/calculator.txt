@@ -1,0 +1,42 @@
+25
++ 2.0 3.0
+sine 1
+- 5.0 3.0
+precision 0
+* 3.0 5.0
+/ 15.0 5.0
+% 27 7
+cube 2.0
+sin 10.0
+round 7.2
+tan 10.0
+sqrt 16.0
+n! 10
+exp 0.0
+exp 1.0
+% 10 3
++ 3.0 2.0
+precision 4
+% 5 3
+exp 3.0
++ 3.0 2.0
+sqrt 25.0
+cuberoot 8.0
+% 5 3
++ 3.0 2.0
+maximum 3 2.3 35 45
+n! 2
+sin 90.0
+cuberoot 8.0
+precision 0
+cos 45.0
+cuberoot 64.0
+pow 2.0 3.0
+round 3.6
+n! 6
+tan 85.0
+cos 0.0
+* 2.0 2.0
+/ 10.0 2.0
+cube 6.0
+% 10 3
